@@ -175,7 +175,7 @@
                     </style> </div>
                 <button type="submit" class="btn">Sign in</button>
                 <button type="button" class="google-btn">
-                    <img src="image/google.png" alt="Google Icon" width="20"> Sign in with Google
+                    <img src="google.png" alt="Google Icon" width="20"> Sign in with Google
                 </button>
             </form>
             <div class="signup">
