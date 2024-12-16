@@ -1,40 +1,4 @@
 <?php
-session_start(); // Start the session
-include 'db.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the email and password from the form
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Prepare a statement to retrieve user data based on email
-    $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->store_result();
-
-    // Check if a user with the given email exists
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($user_id, $hashed_password);
-        $stmt->fetch();
-
-        // Verify the password
-        if (password_verify($password, $hashed_password)) {
-            // Password is correct, log the user in
-            $_SESSION['user_id'] = $user_id; // Store user ID in session
-            $_SESSION['email'] = $email; // Store user email in session
-            header("Location: service_order.php"); // Redirect to the service order page
-            exit();
-        } else {
-            $_SESSION['error'] = "Invalid email or password.";
-        }
-    } else {
-        $_SESSION['error'] = "Invalid email or password.";
-    }
-
-    $stmt->close();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,13 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Welcome Back</h1>
             <p>Please enter your details.</p>
 
-            <?php
-            // Display error message if set
-            if (isset($_SESSION['error'])) {
-                echo '<p class="error">' . $_SESSION['error'] . '</p>';
-                unset($_SESSION['error']); // Clear the error message
-            }
-            ?>
 
             <form method="POST" action="login.php">
                 <div class="form-group">
