@@ -1,0 +1,121 @@
+/* Reset some defaults */
+* {
+    box-sizing: border-box;
+      padding: 0;
+
+}
+
+ 
+
+body {  font-family: Arial, sans-serif;
+
+    background-size: contain; /* Ensures the entire image is visible */
+
+    font-family: Arial, sans-serif;
+    background-image: url('../image/bg2.jpg'); /* Adjusted to relative path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keeps the background in place while scrolling */
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #ffffff; /* Solid white background for content */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgb(0, 0, 0, 2.0);
+}
+h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    border-radius: 20px;
+}
+
+table, th  {
+    border: 1px solid #25037b;
+    font-weight: bold;
+    color: #fff;
+    
+}
+td{
+    border: 1px solid #25037b;
+    font-weight: bold;
+    color: #000;
+   
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+th {
+    background-color: #007bff;
+    
+}
+
+.customer-details, .summary, .form-group {
+    margin: 20px 0;
+    border-radius: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.navbar .navbar-brand {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-nav {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .navbar-nav li {
+    margin-left: 15px;
+}
+
+.navbar .navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+input[type="number"], input[type="date"], input[type="time"], select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007bff;
+}

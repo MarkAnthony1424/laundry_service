@@ -1,0 +1,129 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc; /* Light background for a clean look */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the profile page */
+.container {
+    max-width: 850px; /* Adjusted container width for balance */
+    margin: 50px auto;
+    background-color: #ffffff; /* White background for contrast */
+    padding: 30px;
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: flex;
+    flex-direction: row; /* Ensure profile section and info are side-by-side */
+    justify-content: flex-start;
+}
+
+/* Profile picture styles */
+.profile-pic {
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    border-radius: 50%; /* Circular profile picture */
+    overflow: hidden; /* Crop any overflow */
+    margin-right: 30px; /* Spacing to the right */
+}
+
+/* Profile picture image */
+.profile-pic img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover to maintain aspect ratio */
+}
+
+/* Profile information section */
+.profile-info {
+    flex-grow: 1; /* Take up remaining space */
+}
+
+/* User name styling */
+.profile-info h2 {
+    font-size: 2.5em; /* Larger font for the name */
+    margin: 0 0 10px; /* Margin below */
+    color: #333; /* Dark color for text */
+}
+
+/* Username styling */
+.profile-info h3 {
+    font-size: 1.2em; /* Slightly larger font for username */
+    color: #555; /* Grey color for less emphasis */
+    margin: 0 0 15px; /* Margin below */
+}
+
+/* Paragraph styles for contact info */
+.profile-info p {
+    margin: 8px 0; /* Spacing between lines */
+    color: #444; /* Darker grey for better readability */
+    font-size: 1em; /* Comfortable reading size */
+}
+
+/* Strong text for labels */
+.profile-info p strong {
+    color: #0056b3; /* Blue color for labels */
+}
+
+/* Contact info section styling */
+.contact-info {
+    margin-top: 20px; /* Space above the contact info */
+}
+
+/* Edit button styling */
+.edit-button {
+    background-color: #2E3B55; /* Same as navbar for consistency */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* No underline */
+    padding: 12px 25px; /* Comfortable padding */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 25px; /* Space above */
+    display: inline-block; /* Button-like appearance */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+/* Edit button hover effect */
+.edit-button:hover {
+    background-color: #243247; /* Darker shade for hover */
+}
+
+/* Navbar */
+/* Navbar Styles */
+.navbar {
+    background-color: #2E3B55; /* Consistent dark blue */
+    color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+.navbar-nav li {
+    display: inline;
+}
+
+.navbar-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar-nav a:hover {
+    color: #B5C7E0; /* Lighter blue on hover */
+}

@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.left-section {
+    flex: 1;
+    background-color: #e5f7f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.left-section .content {
+    text-align: center;
+}
+
+.left-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.left-section img {
+    width: 300px;
+    height: auto;
+}
+
+.right-section {
+    flex: 1;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.language {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.language span {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.social-login {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.google-btn img, .facebook-btn img {
+    margin-right: 10px;
+}
+
+.google-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.facebook-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.divider {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+}
+
+.create-account-btn {
+    background-color: #66c6b7;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-account-btn:hover {
+    background-color: #55b0a1;
+}
+
+.login {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.login a {
+    color: #010a09;
+    text-decoration: none;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,138 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font for better readability */
+    background-color: #f4f4f9; /* Light background for contrast */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add padding to the body for better spacing */
+}
+
+/* Container for the form */
+.container {
+    max-width: 600px; /* Set maximum width of the container for a more compact look */
+    margin: 50px auto; /* Center the container vertically and horizontally */
+    background-color: #ffffff; /* White background for the form */
+    padding: 40px; /* Increased spacing within the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Title styles */
+h2 {
+    text-align: center; /* Center the title */
+    color: #333; /* Dark text color */
+    margin-bottom: 25px; /* Space below the title */
+    font-size: 24px; /* Increased font size for the title */
+    font-weight: 600; /* Bold weight for the title */
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 25px; /* Increase spacing between form groups */
+}
+
+/* Label styles */
+label {
+    display: block; /* Labels on their own line */
+    font-weight: bold; /* Bold labels for emphasis */
+    margin-bottom: 8px; /* Space below the label */
+    color: #555; /* Slightly lighter color for labels */
+}
+
+/* Input and textarea styles */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full width inputs for better usability */
+    padding: 12px; /* Increased padding for comfort */
+    border-radius: 4px; /* Rounded corners for inputs */
+    border: 1px solid #ccc; /* Light border for inputs */
+    font-size: 16px; /* Comfortable font size */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+/* Input hover effect */
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+    border-color: #007bff; /* Change border color on hover */
+}
+
+/* Input focus effect */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button styles */
+button {
+    width: 100%; /* Full width button */
+    padding: 12px; /* Increased padding within the button */
+    font-size: 16px; /* Font size for button text */
+    color: #fff; /* White text color */
+    background-color: #007bff; /* Blue background */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background color */
+    font-weight: 600; /* Bold weight for button text */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Button active effect */
+button:active {
+    transform: translateY(0); /* Reset lift effect on click */
+}
+
+/* Error message styles */
+.error-message {
+    color: #d9534f; /* Red color for error messages */
+    margin-top: 5px; /* Space above error messages */
+    font-size: 14px; /* Font size for error messages */
+    text-align: center; /* Center error messages */
+}
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar {
+    background-color: #2E3B55; /* Consistent dark blue */
+    color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+.navbar-nav li {
+    display: inline;
+}
+
+.navbar-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar-nav a:hover {
+    color: #B5C7E0; /* Lighter blue on hover */
+}
