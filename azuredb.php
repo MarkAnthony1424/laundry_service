@@ -13,7 +13,7 @@ try {
     $conn = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4"
        
             PDO::MYSQL_ATTR_SSL_CA => 'DigitalCertGlobalRootCA.crt.pem' 
-        ]
+        ]\
     );
 
     // Set PDO error mode to exception

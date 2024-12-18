@@ -1,41 +1,42 @@
 name: Build and Push Docker Image
 
-
 on:
   push:
     tags:
-      - "v*"
-
+      - 'v*'
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
 
     steps:
       # Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
 
-
       # Set up Docker Buildx
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
+      # Install Docker Compose
+      - name: Install Docker Compose
+        run: |
+          sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r .tag_name)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+          docker-compose --version
 
       # Extract the Git tag
       - name: Extract Git tag
         id: get_tag
         run: |
-          tag=${GITHUB_REF#refs/tags/}  # Extract the tag name
+          tag=${GITHUB_REF#refs/*/}  # Remove "refs/tags/" prefix to get the tag name
           echo "tag=${tag}" >> $GITHUB_ENV
-
 
       # Replace the image tag in docker-compose.yml
       - name: Replace image tag in docker-compose
         run: |
-          sed -i "s|image:.*|image: krammm/php-app:${tag}|" docker-compose.yml  # Updated path
-
+          sed -i "s|image:.*|image: krammm/php-app:${tag}|" docker-compose.yml 
 
       # Log in to DockerHub
       - name: Log in to DockerHub
@@ -44,11 +45,10 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
-
       # Build and push Docker image
       - name: Build and Push Docker Image
         run: |
-          docker-compose build
-          docker-compose push
+          docker compose build
+          docker compose push
         env:
           tag: ${{ env.tag }}
