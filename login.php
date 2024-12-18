@@ -1,8 +1,7 @@
-
 <?php
-session_start(); // Start the session
-include 'db.php';
+session_start(); // Start the session at the very beginning of the file
 
+include 'db.php'; // Include database connection
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the email and password from the form
     $email = $_POST['email'];
@@ -73,24 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="checkbox" id="remember-me" name="remember">
                         <label for="remember-me">Remember me</label>
                     </div>
-                    <style>
-                        .btn {
-                            display: block;
-                            margin: 20px auto;
-                            padding: 10px 20px;
-                            font-size: 18px;
-                            color: white;
-                            background-color: #007bff;
-                            border: none;
-                            border-radius: 5px;
-                            cursor: pointer;
-                            transition: background-color 0.3s ease;
-                        }
-
-                        .btn:hover {
-                            background-color: #0056b3;
-                        }
-                    </style> </div>
+                </div>
                 <button type="submit" class="btn">Sign in</button>
                 <button type="button" class="google-btn">
                     <img src="image/google.png" alt="Google Icon" width="20"> Sign in with Google

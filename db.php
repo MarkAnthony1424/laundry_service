@@ -1,18 +1,14 @@
-
 <?php
-// db.php
-$DB_HOST = "localhost"; // Azure MySQL server address
-$DB_USERNAME = "root"; // Azure username format
-$DB_PASSWORD = ""; // Your password for the database
-$DB_NAME = "laundry_service";
+// Use environment variables for database connection
+$DB_HOST = getenv('DB_HOST') ?: 'db';  // Default to 'db' if not set in .env
+$DB_USERNAME = getenv('DB_USERNAME') ?: 'app_user';  // Default to 'app_user' if not set
+$DB_PASSWORD = getenv('DB_PASSWORD') ?: 'admin';  // Default to 'admin' if not set
+$DB_NAME = getenv('DB_NAME') ?: 'laundry_service';  // Default to 'laundry_service' if not set
 
-// Create connection
 $conn = new mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_NAME, 3306);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
 ?>
-
-

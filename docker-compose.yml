@@ -1,27 +1,25 @@
+version: '3.8'
+
 services:
   web:
-    image: docker-u/docker-repo:latest
+    image: krammm/php-app:latest
     build:
       context: .
+    env_file:
+      - .env
     ports:
-      - "8000:80" # Map port 8000 on the host to port 80 in the container
+      - "8000:80"
+    volumes:
+      - .:/var/www/html # Mount application code into the container
     depends_on:
       - db
-    restart: always
 
   db:
-    image: mysql:8.0 # Use MySQL version 8.0
+    image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: admin
-      MYSQL_DATABASE: app_db # Replace with your desired database name
-      MYSQL_USER: app_user # Replace with your desired username
-      MYSQL_PASSWORD: app_password # Replace with your desired password
-    command: --bind-address=0.0.0.0
+      MYSQL_DATABASE: laundry_service
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: admin
     ports:
-      - "3306:3306" # Expose MySQL on default port 3306
-    volumes:
-      - dbdata:/var/lib/mysql
-    restart: always
-
-volumes:
-  dbdata:
+      - "3306:3306"
